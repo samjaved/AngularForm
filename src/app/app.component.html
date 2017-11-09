@@ -1,4 +1,6 @@
 <div id="left">
+
+
 <div class="alert alert-success" *ngIf="saveSuccess">
     <strong>Success!</strong>
 </div>
@@ -9,6 +11,24 @@
 			  <div class="form-container">
               <div class="row columns">
             <fieldset>
+			
+			<div class="form-group"
+                    [ngClass]="{'has-error': displayMessage.moveindate }">
+                    <label class="col-md-2 control-label" 
+                           for="buildingId">Building ID</label>
+
+                    <div class="col-md-8">
+                        <input class="form-control" 
+                               id="buildingId" 
+                               type="number" 
+                               placeholder="Building Id (required)" 
+                               formControlName="buildingid" />
+                        <span class="help-block" *ngIf="displayMessage.buildingid">
+                            {{ displayMessage.buildingid}}
+                        </span>
+                    </div>
+                </div>
+			
                 <div class="form-group"
                     [ngClass]="{'has-error': displayMessage.moveindate }">
                     <label class="col-md-2 control-label" 
@@ -168,6 +188,7 @@
                 <table>
                     <tr>
                         <th>#</th>
+						<th>Building ID</th>
                         <th>Move in Date</th>
 						<th>Street</th>
 						<th>Postcode</th>
@@ -177,6 +198,7 @@
                     </tr>
                     <tr *ngFor="let post of posts; let i = index">
                         <td>{{i + 1}}</td>
+						<td>{{post.buildingid}}</td>
                         <td>{{post.moveindate}}</td>
 						<td>{{post.street}}</td>
 						<td>{{post.postcode}}</td>
