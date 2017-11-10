@@ -7,7 +7,7 @@ Clone this repository and run `npm install`
 
 Then run `npm start` and you will be up and running.
 
-## Accessing the webpage contating form to save data and list of records  
+## Accessing the webpage containing form to save data and list of records  
 localhost:8001
 
 
