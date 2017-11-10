@@ -137,9 +137,10 @@ this.genericValidator = new GenericValidator(this.validationMessages);
                 this.saveSuccess = true;
 				setTimeout(function() {
                   this.saveSuccess = false;
-				  this.customerForm.reset();
+				  window.location.reload();
+				  
                 
-                 }.bind(this), 3000);
+                 }.bind(this), 300);
 				
 				
             }
